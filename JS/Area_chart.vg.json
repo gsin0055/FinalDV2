@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "../Data/population-indigenous-status-2015.csv"
+    "url": "https://raw.githubusercontent.com/gsin0055/FinalDV2/refs/heads/main/Data/population-indigenous-status-2015-Thinkpad-G.csv"
   },
   "vconcat": [
     {

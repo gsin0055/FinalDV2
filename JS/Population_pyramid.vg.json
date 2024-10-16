@@ -1,0 +1,77 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A population pyramid for the US in 2000.",
+  "data": { "url": "../Data/population-indigenous-status-2015.csv"},
+  "transform": [
+    {"filter": "datum.Year == 2015"},
+    {"calculate": "datum.Sex == 'F' ? 'Female' : 'Male'", "as": "gender"}
+
+  ],
+  "spacing": 0,
+  "hconcat": [{
+    "transform": [{
+      "filter": {"field": "gender", "equal": "Female"}
+    }],
+    "title": "Female",
+    "mark": "bar",
+    "height": 700,
+    "width": 300,
+    "encoding": {
+      "y": {
+        "field": "Age_Range", "title": null,
+        "axis": null, "sort": "descending"
+      },
+      "x": {
+        "aggregate": "sum", "field": "Count",
+        "title": "population",
+        "axis": {"format": "s"},
+        "sort": "descending"
+      },
+      "color": {
+        "field": "gender",
+        "legend": null
+      }
+    }},
+    {
+    "width": 50,
+      "height": 700,
+    "view": {"stroke": null},
+    "mark": {
+      "type": "text",
+      "align": "center",
+      "fontSize": 20
+    },
+    "encoding": {
+      "y": {"field": "Age_Range", "type": "ordinal", "axis": null, "sort": "descending"},
+      "text": {"field": "Age_Range", "type": "quantitative"}
+    }
+  }, {
+    "transform": [{
+      "filter": {"field": "gender", "equal": "Male"}
+    }],
+    "title": "Male",
+    "mark": "bar",
+      "height":700,
+      "width": 300,
+      "encoding": {
+      "y": {
+        "field": "Age_Range", "title": null,
+        "axis": null, "sort": "descending"
+      },
+      "x": {
+        "aggregate": "sum", "field": "Count",
+        "title": "population",
+        "axis": {"format": "s"}
+      },
+      "color": {
+        "field": "gender",
+        "legend": null
+      }
+    }
+  }],
+
+  "config": {
+    "view": {"stroke": null},
+    "axis": {"grid": false}
+  }
+}

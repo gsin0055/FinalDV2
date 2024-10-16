@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Import Vega & Vega-Lite  -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <link href = "./css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+    <div id="heading">
+        <h1>Indigenous Australians Register</h1>
+    </div>
+    <div id="content-wrapper">
+        <div class="content">
+            <div id="state_bar"></div>
+            <div class="content-text">
+                <span>The data is notably concentrated along the northern coast, with a particularly dense cluster in the northeastern region of Australia, specifically in Queensland and the Northern Territory.
+                    These areas have higher biodiversity and ecological importance, necessitating more conservation efforts. Additionally, there is a higher indigenous population in these regions, leading to more ranger programs. Consequently, the government prioritizes these areas for conservation due to their environmental and cultural significance. This map highlights the importance of indigenous-led conservation efforts and shows where such initiatives are most active or needed.
+                </span>
+            </div>
+        </div>
+        <div class="content">
+            <div id="Population_pyramid"></div>
+            <div class="content-text">
+                <P>
+
+                    This population pyramid displays the age and gender distribution of Indigenous Australians in 2015. The chart is divided into two sections: the left side (blue bars) represents the female population, and the right side (orange bars) represents the male population. Each bar corresponds to specific age groups, ranging from 0 to 60+ years.
+                    <br><br>
+                    The horizontal axis shows the population size, with larger bars indicating a larger number of individuals in that age group. The chart suggests a larger young population, as seen by the wider bars at the bottom, particularly in the 0-10 age groups. As the age groups increase, the population declines gradually, indicating a typical pyramidal structure seen in younger populations.
+                    <br><br>
+                    This type of chart is commonly used to analyze demographic trends, and in this case, it highlights a youthful Indigenous population with relatively fewer older individuals, reflecting a growing population. The similarity between the male and female distributions suggests a balanced gender ratio across most age groups.
+                </P>
+            </div>
+        </div>
+        <div class="content">
+            <div id="Region_radial"></div>
+            <div class="content-text">
+                <p>
+                    The radial chart illustrates the distribution of Indigenous Australian groups across different regions of Australia. Each segment represents a distinct region, with the size of each section corresponding to the proportion of Indigenous groups within that region.
+                    <br><br>
+                    The chart is color-coded, with each region represented by a different color as indicated in the legend. For instance, the Northern Territory’s Arnhem Land region (in red) appears to hold a significant portion of the Indigenous population, while the Queensland Mainland northern region (yellow) and the Western Australia Kimberley region (orange) are also prominent. Smaller segments represent regions with fewer Indigenous groups.
+                    <br><br>
+                    This visualization highlights the geographic spread of Indigenous communities, showing how they are concentrated in specific regions across the country. Large regions like the NT - Arnhem Land and WA - Kimberley dominate, reflecting areas where Indigenous groups have a stronger presence. The chart is a useful way to understand the regional distribution and variation in Indigenous populations across Australia's states and territories.
+                </p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="Area_population"></div>
+            <div class="content-text">
+                <p>
+                    These two area charts illustrate the growth of the Indigenous Australian population from 2002 to 2015. Both charts, one in blue and the other in orange, depict the population increasing steadily over the years.
+                    <br><br>
+                    In 2002, the population begins at around 3.5 million, and by 2015, it reaches nearly 5 million. The upward slope in both charts indicates consistent population growth throughout the period, without any significant dips or fluctuations. This growth might be attributed to factors such as higher birth rates, improved life expectancy, or more people identifying as Indigenous over time.
+                    <br><br>
+                    Both charts emphasize the positive trend of population expansion, which has important implications for policy planning in areas like healthcare, education, and community support. The steady growth highlights a need for ongoing focus on these services to accommodate the increasing Indigenous population.
+                </p>
+            </div>
+        </div>
+        <div class="content">
+            <div id="Location_map"></div>
+            <div class="content-text">
+                <p>
+                    This bar chart illustrates the number of ranger groups based in each Australian state and territory. Each bar represents a state, with the height corresponding to the total number of people involved in ranger groups in that region.
+                    <br><br>
+                    The Northern Territory (NT), represented by the red bar, has the highest number of ranger groups, with over 650 people involved. Queensland (QLD) follows with more than 500 people. Western Australia (WA) also has a significant number, with over 450 people.
+                    <br><br>
+                    In contrast, states such as New South Wales (NSW), South Australia (SA), and Tasmania (TAS) have much smaller ranger populations, with the lowest numbers observed in Tasmania and the Australian Capital Territory (ACT).
+                    <br><br>
+                    This chart highlights the concentration of ranger groups in certain regions, particularly the NT, QLD, and WA, likely reflecting the large tracts of land and conservation areas in these states where ranger groups are more active. Smaller states and territories like ACT and TAS have fewer groups, which could be due to their relatively smaller land areas and conservation needs.
+
+
+
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    var symbolMap = "./JS/Symbol_map.vg.json";
+    var barChart = './JS/Bar_chart.vg.json';
+    var radialPlot = './JS/Radial_chart.vg.json';
+    var populationPyramid = './JS/Population_pyramid.vg.json'
+    var areaChart = './JS/Area_chart.vg.json'
+    vegaEmbed('#state_bar', symbolMap).then(function(result) {
+    }).catch(console.error);
+    vegaEmbed('#Location_map', barChart).then(function(result) {
+    }).catch(console.error);
+    vegaEmbed('#Region_radial', radialPlot).then(function(result) {
+    }).catch(console.error);
+    vegaEmbed('#Population_pyramid', populationPyramid).then(function(result) {
+    }).catch(console.error);
+    vegaEmbed('#Area_population', areaChart).then(function(result) {
+    }).catch(console.error);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "../Data/population-indigenous-status-2015.csv"
+  },
+  "vconcat": [
+    {
+      "width": 600,
+      "height": 500,
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year_only",
+          "type": "temporal",
+          "scale": {"domain": {"param": "brush"}},
+          "axis": {"title": "Year"}
+        },
+        "y": {
+          "field": "Count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "axis": {"title": "Total Population"}
+        },
+        "color": {"value": "#1f77b4"},
+        "tooltip": [
+          {"field": "Year_only", "type": "temporal", "title": "Year"},
+          {"field": "Count", "type": "quantitative", "aggregate": "sum", "title": "Total Population"}
+        ]
+      }
+    },
+    {
+      "width": 600,
+      "height": 200,
+      "mark": "area",
+      "params": [
+        {
+          "name": "brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
+      "encoding": {
+        "x": {"field": "Year_only", "type": "temporal", "title": "Year"},
+        "y": {
+          "field": "Count",
+          "type": "quantitative",
+          "aggregate": "sum",
+          "axis": {"title": "Total Population"}
+        },
+        "color": {"value": "#ff7f0e"},
+        "tooltip": [
+          {"field": "Year_only", "type": "temporal", "title": "Year"},
+          {"field": "Count", "type": "quantitative", "aggregate": "sum", "title": "Total Population"}
+        ]
+      }
+    }
+  ]
+}

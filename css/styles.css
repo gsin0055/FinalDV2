@@ -1,138 +1,98 @@
-
-
-/*body {*/
-/*    font-family: Arial, sans-serif;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    min-height: 100vh;*/
-/*    background-color: #f4f4f4;*/
-/*}*/
-/*.heading{*/
-/*    align-content: flex-start;*/
-/*    align-items: flex-start;*/
-/*    justify-content: flex-start;*/
-
-/*}*/
-
-/*.container {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    gap: 1rem;*/
-/*    height: 100%;*/
-/*    width: 100%;*/
-/*    max-width: 1200px;*/
-/*    padding: 2rem;*/
-/*    align-content: center;*/
-/*}*/
-
-/*.column {*/
-/*    width: 70%;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    gap: 2rem;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.item {*/
-/*    width: 100%;*/
-/*    padding:1rem;*/
-/*    background-color: #fff;*/
-/*    border: 1px solid #ddd;*/
-/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-/*    text-align: center;*/
-/*    height: 100%;*/
-/*    margin:10px;*/
-/*}*/
-
-/*h2 {*/
-/*    margin-bottom: 1rem;*/
-/*    color: #333;*/
-/*}*/
-/*.text-box {*/
-/*    background-color: #f9f9f9; !* Light grey background *!*/
-/*    border: 1px solid #ddd; !* Border to match visualizations *!*/
-/*    border-radius: 8px; !* Rounded corners *!*/
-/*    padding: 15px; !* Internal padding *!*/
-/*    margin-top: 15px; !* Space between visualization and text box *!*/
-/*    font-size: 1em;*/
-/*    color: #333; !* Text color *!*/
-/*    line-height: 1.5; !* Line height for readability *!*/
-/*}*/
-/*.sub-item {*/
-/*    width: 100%;*/
-/*    padding:1rem;*/
-/*    background-color: #fff;*/
-/*    border: 1px solid #ddd;*/
-/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
-/*    text-align: center;*/
-/*    align-content: center;*/
-/*    height: 800px;*/
-/*    margin-left:60px;*/
-/*}*/
-
+/* Reset Styles */
 * {
     margin: 0;
     padding: 0;
-
-}
-body{
-    background-color: #FFD9CE;
+    box-sizing: border-box;
 }
 
+/* Body Styles */
+body {
+    background-color: #F5F5F5;
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+}
+
+/* Container */
 .container {
-    display: flex;
-    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 1rem;
-    gap: 1rem;
 }
 
-.container #heading {
+/* Heading */
+#heading {
     width: 100%;
-    height: 8vh;
-    border: 2px solid gray;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0D0221;
-
-}
-
-.container #content-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.container #content-wrapper .content {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    border-bottom: solid 1px #0D0221;
-    padding-bottom: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-.container #content-wrapper .content .content-text {
-    display: flex;
-    height: min-content;
-    flex-direction: column;
-    gap: 1rem;
+    padding: 1.5rem 0;
+    background-color: #2E3B4E;
     text-align: center;
-    border: 1px solid #0D0221;
+}
+
+#heading h1 {
+    color: #FFFFFF;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Content Wrapper */
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Content Sections */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+/* Chart Styles */
+.chart {
+    flex: 2;
+    min-width: 60%;
+    min-height: 400px; /* Added minimum height */
+    display: flex;      /* Added to center the chart */
+    align-items: center;/* Centering vertically */
+    justify-content: center; /* Centering horizontally */
+}
+
+/* Content Text */
+.content-text {
+    flex: 1;
+    min-width: 35%;
+    background-color: #FFFFFF;
+    padding: 1.5rem;
     border-radius: 5px;
-    padding: .5rem 0;
-
-    color: #0D0221;
-    padding: .5rem;
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.content-text span {
-    opacity: .7;
+.content-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
-#heading h1{
-color: #D0A98F;
+.content-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Footer */
+#footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+#footer a {
+    color: #2E3B4E;
+    text-decoration: none;
+}
+
+#footer a:hover {
+    text-decoration: underline;
 }
